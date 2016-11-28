@@ -1,6 +1,6 @@
 {
   "name": "gevent",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "simple event bus for webapp",
   "main": "index.js",
   "scripts": {
@@ -10,5 +10,13 @@
     "eventbus"
   ],
   "author": "qtx",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lkiarest/gevent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lkiarest/gevent/issues"
+  },
+  "homepage": "https://github.com/lkiarest/gevent#readme"
 }
