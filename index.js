@@ -21,7 +21,7 @@
     };
 
     var _isFunc = function(arg) {
-        return Object.prototype.toString.call(callback) === '[object Function]';
+        return Object.prototype.toString.call(arg) === '[object Function]';
     };
 
     // add event

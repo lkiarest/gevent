@@ -1,6 +1,6 @@
 {
   "name": "gevent",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "simple event bus for webapp",
   "main": "index.js",
   "scripts": {
