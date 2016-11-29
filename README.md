@@ -6,7 +6,13 @@ CMD:
 ```
 // module A
 var ge = require('gevent');
-ge.on('dataChange', item => drawData(item));
+var uid1 = ge.on('dataChange', item => drawData(item));
+var uid2 = ge.on('dataChange', item => drawData2(item));
+
+// remove all by event type
+ge.off('dataChange');
+// or remove one by event id if you have duplicate event name registered
+ge.offOne(uid1);
 
 // module B
 var ge = require('gevent');
@@ -30,7 +36,10 @@ apis:
   subscribe event
 
 - __off(eventName)__
-  unsubscribe event
+  unsubscribe all event by event name
+
+- __offOne(eventId)__
+  unsubscribe one event by event id
 
 - __emit(eventName, params)__
   trigger event with transition data

@@ -46,13 +46,24 @@
         return uid;
     };
 
-    // remove event
-    var off = function(uid) {
-        if (uid === undefined || uid === null) {
+    // remove event by event type
+    var off = function(type) {
+        if (_nil(type)) {
             return;
         }
 
-        if (! _events[uid]) {
+        for (var uid in _events) {
+            if (_events[uid].type === type) {
+                delete _events[uid];
+            }
+        }
+    };
+
+    /**
+     * remove event by uid
+     */
+    var offOne = function(uid) {
+        if (_nil(uid)) {
             return;
         }
 
@@ -85,6 +96,7 @@
     return {
         on: on,
         off: off,
+        offOne: offOne,
         emit: emit,
         clear: clear
     };
