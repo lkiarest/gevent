@@ -2,6 +2,7 @@ A simple eventbus for webapp.
 
 usage:
 
+CMD:
 ```
 // module A
 var ge = require('gevent');
@@ -10,6 +11,17 @@ ge.on('dataChange', item => drawData(item));
 // module B
 var ge = require('gevent');
 doAsyncRequest().then(res => ge.emit('dataChange', res));
+```
+
+Js Lib:
+```
+<script src='./gevent/index.js'></script>
+<script>
+    // listen
+    gEvent.on('dataChange', item => drawData(item));
+    // fire
+    doAsyncRequest().then(res => gEvent.emit('dataChange', res));
+</script>
 ```
 
 apis:
